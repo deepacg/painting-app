@@ -29,6 +29,7 @@ function paintingTouchStart(e){
     if (e.target.nodeName == 'CANVAS') { 
         e.preventDefault(); 
     } 
+    drawTouch(e)
 }
 function paintingEnd(e){        // mouse up
     painting = false
