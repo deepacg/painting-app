@@ -16,13 +16,13 @@ document.getElementById('thickness').addEventListener('change', function() {
     brushSize = this.value
 })
 
-let painting = false
+let painting = false        // to record mouse click
 
-function paintingStart(e) {
+function paintingStart(e) {     // mouse down
     painting = true
     draw(e)
-}
-function paintingEnd(e){
+}   
+function paintingEnd(){        // mouse up
     painting = false
     ctx.beginPath()
 }
@@ -44,4 +44,9 @@ function draw(e){
 
 canvas.addEventListener('mousedown', paintingStart)
 canvas.addEventListener('mouseup', paintingEnd)
+
+canvas.addEventListener('touchstart', paintingStart)
+canvas.addEventListener('touchend', paintingEnd)
+
 canvas.addEventListener('mousemove', draw)
+
