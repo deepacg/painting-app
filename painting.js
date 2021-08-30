@@ -21,13 +21,22 @@ let painting = false        // to record mouse click
 function paintingStart(e) {     // mouse down
     painting = true
     draw(e)
+    if (e.target.nodeName == 'CANVAS') { 
+        e.preventDefault(); 
+    } 
 }   
-function paintingEnd(){        // mouse up
+function paintingEnd(e){        // mouse up
     painting = false
     ctx.beginPath()
+    if (e.target.nodeName == 'CANVAS') { 
+        e.preventDefault(); 
+    } 
 }
 function draw(e){
     if(!painting) return
+    if (e.target.nodeName == 'CANVAS') { 
+        e.preventDefault(); 
+    } 
 
     let x = e.clientX
     let y = e.clientY - canvas.offsetTop
