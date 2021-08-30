@@ -19,3 +19,13 @@
 #thickness{
     padding: 10px
 }
+
+#erase{
+    padding: 10px;
+    background-color: blanchedalmond;
+    color: chocolate;
+    border-radius: 10px;
+    border-color: cornflowerblue;
+    font-weight: bold;
+    font-size: medium;
+}

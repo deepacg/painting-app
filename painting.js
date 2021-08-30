@@ -15,13 +15,16 @@ document.getElementById('color').addEventListener('change', function(){
 document.getElementById('thickness').addEventListener('change', function() {
     brushSize = this.value
 })
+document.getElementById('erase').addEventListener('click', function(){
+    brushColor = 'white'
+})
 
 let painting = false        // to record mouse click
 
 function paintingStart(e) {     // mouse down
     painting = true
     draw(e)
-    if (e.target.nodeName == 'CANVAS') { 
+    if (e.target.nodeName == 'CANVAS') {    // to prevent scrolling in case of touch screen
         e.preventDefault(); 
     } 
 }   
@@ -47,14 +50,10 @@ function draw(e){
         x = e.clientX;
         y = e.clientY - canvas.offsetTop;
     }
-    // let x = e.clientX
-    // let y = e.clientY - canvas.offsetTop
     
     ctx.lineWidth = brushSize
     ctx.lineCap = 'round'
 
-    // ctx.beginPath()
-    // ctx.moveTo(x, y)
     ctx.lineTo(x, y)
     ctx.strokeStyle = brushColor
     ctx.stroke()
@@ -66,6 +65,3 @@ canvas.addEventListener('mousemove', draw)
 canvas.addEventListener('touchstart', paintingStart, false)
 canvas.addEventListener('touchend', paintingEnd, false)
 canvas.addEventListener('touchmove', draw, false)
-
-
-
