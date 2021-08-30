@@ -63,9 +63,9 @@ function draw(e){
 canvas.addEventListener('mousedown', paintingStart)
 canvas.addEventListener('mouseup', paintingEnd)
 canvas.addEventListener('mousemove', draw)
-canvas.addEventListener('touchstart', paintingStart)
-canvas.addEventListener('touchend', paintingEnd)
-canvas.addEventListener('touchmove', draw)
+canvas.addEventListener('touchstart', paintingStart, false)
+canvas.addEventListener('touchend', paintingEnd, false)
+canvas.addEventListener('touchmove', draw, false)
 
 
 
