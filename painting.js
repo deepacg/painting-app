@@ -41,7 +41,7 @@ function draw(e){
     } 
     let x, y;
     if(e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel'){
-        var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+        var touch = e.touches[0] || e.changedTouches[0];
         x = touch.pageX;
         y = touch.pageY - canvas.offsetTop;
     } else if (e.type == 'mousedown' || e.type == 'mouseup' || e.type == 'mousemove' || e.type == 'mouseover'|| e.type=='mouseout' || e.type=='mouseenter' || e.type=='mouseleave') {
@@ -60,7 +60,6 @@ function draw(e){
     ctx.strokeStyle = brushColor
     ctx.stroke()
 }
-
 
 canvas.addEventListener('mousedown', paintingStart)
 canvas.addEventListener('mouseup', paintingEnd)
