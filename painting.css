@@ -6,6 +6,7 @@
 }
 #canvas{
     border: solid 1px black;
+    margin-top: 10px
 
 }
 #color{
@@ -21,6 +22,16 @@
 }
 
 #erase{
+    padding: 10px;
+    background-color: blanchedalmond;
+    color: chocolate;
+    border-radius: 10px;
+    border-color: cornflowerblue;
+    font-weight: bold;
+    font-size: medium;
+}
+
+#paint{
     padding: 10px;
     background-color: blanchedalmond;
     color: chocolate;

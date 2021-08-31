@@ -18,6 +18,9 @@ document.getElementById('thickness').addEventListener('change', function() {
 document.getElementById('erase').addEventListener('click', function(){
     brushColor = 'white'
 })
+document.getElementById('paint').addEventListener('click', function(){
+    brushColor = document.getElementById('color').value
+})
 
 let painting = false        // to record mouse click
 
